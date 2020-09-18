@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<% if @users %>
+  <% @users.each do |user| %>
+    <div><%= user.name %></div>
+    <div><%= user.address %></div>
+    <div><%= user.age %></div>
+    <br>
+    <p>"-----------------------------------"</p>
+    <br>
+  <% end %>
+<% else %>
+<% end %>

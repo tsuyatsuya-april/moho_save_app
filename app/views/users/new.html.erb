@@ -1,0 +1,30 @@
+<h1>New User</h1>
+
+<%= form_with model: @users, url: users_path, local: true do |form| %>
+  <% @users.collection.each do |user|%>
+    <%= fields_for 'users[]', user do |field| %>
+      <div class="field">
+        <%= field.label :name %>
+        <%= field.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= field.label :address %>
+        <%= field.text_field :address %>
+      </div>
+
+      <div class="field">
+        <%= field.label :age %>
+        <%= field.number_field :age %>
+      </div>
+      </br>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', users_path %>
